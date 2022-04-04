@@ -1,0 +1,133 @@
+// ::ng-deep
+// .container {
+//     position: relative;
+// }
+// .welcome-on-board {
+//     opacity: 1;
+//     font-size: 44px;
+//     color: #18446B;
+//     text-align: center;
+//     letter-spacing: 0px;
+//     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+// }
+// .wws-logo {
+//     top: -10px;
+//     left: 50%;
+//     width: 243px;
+//     height: 62px;
+//     position: absolute;
+//     transform: translate(-50%, 50%);
+// }
+.container-box {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    z-index: -1;
+    border-radius: 41px;
+    position: absolute;
+    background: transparent linear-gradient(180deg, #18446B 0%, #007DB7 100%) 0% 0% no-repeat padding-box;
+}
+
+// .content {
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-content: center;
+//     flex-wrap: wrap;
+// }
+.box-up {
+    left: 85%;
+    transform: rotate(30deg);
+}
+
+.box-down {
+    left: -10%;
+    top: 50%;
+    transform: rotate(65deg);
+}
+
+.login-content {
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-box {
+    width: 325px;
+    border-radius: 8px;
+    margin: auto;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.login-box-container {
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form {
+    margin-top: 55px;
+}
+
+.inputs {
+    width: 338px;
+    height: 44px;
+}
+
+.to-access {
+    width: 335px;
+    height: 43px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 30px;
+    background: #007DB7;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+// .divider {
+//     top: 539px;
+//     left: 543px;
+//     width: 282px;
+//     height: 0px;
+//     border: 0.5px solid #707070;
+//     opacity: 0.39;
+//     text-align: center;
+//     align-content: center;
+// }
+.forgot-password {
+    width: -131px;
+    height: -15px;
+    font-size: 15px;
+    color: #373536;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.copyright {
+    width: 1300px;
+    height: 50px;
+    // opacity: .54;
+    font-size: 15px;
+    color: #373536;
+    text-align: center;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

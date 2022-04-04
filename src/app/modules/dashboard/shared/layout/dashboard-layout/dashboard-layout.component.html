@@ -1,0 +1,104 @@
+<mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" opened="true" style="overflow: hidden; width: 252px;">
+        <div class="grid grid-cols-1">
+            <mat-nav-list style="padding-top: 0px !important">
+
+                <mat-list class="menu pr-3" style="height: 100vh !important">
+
+                    <div class="flex center-img sm:pb-6 md:pb-12 lg:pb-12 xl:pb-12">
+                        <div class="pr-2 pl-2 align-items-center d-flex">
+                            <div class="flex center-img pt-2 sm:pt-24 md:pt-24 lg:pt-24 xl:pt-24 pb-3">
+                                <img src="../../../../../../assets/iconos/logo-wws-dashboard.svg" width="225px" alt="Logo de WorldWide Seguros">
+                            </div>
+                        </div>
+                    </div>
+
+                    <mat-list-item [routerLink]="['dashboard']" routerLinkActive="router-link-active" style="color: white; max-height: 35px !important;" class="my-3">
+                        <img style="max-height: 35px !important;" [src]="activeRoute.includes('/dashboard/dashboard') ? '../../../../../../assets/iconos/dashboard-icon-h.svg' : '../../../../../../assets/iconos/dashboard-icon.svg'" height="24px" width="24px" class="mr-3 ml-3">
+                        <div style="max-height: 35px !important;" class="text-xs uppercase">Dahsboard</div>
+                    </mat-list-item>
+
+                    <mat-list-item [routerLink]="['requests']" routerLinkActive="router-link-active" style="color: white; max-height: 35px !important;" class="my-3 mt-7">
+                        <img style="max-height: 35px !important;" [src]="!activeRoute.includes('/dashboard/requests') ? '../../../../../../assets/iconos/library_add-24px.svg' : '../../../../../../assets/iconos/library_add-24px-b.svg'" height="24px" width="24px" class="mr-3 ml-3">
+                        <div style="max-height: 35px !important;" class="text-xs uppercase">Solicitudes</div>
+                    </mat-list-item>
+
+                    <mat-list-item [routerLink]="['manual-requests']" routerLinkActive="router-link-active" style="color: white; max-height: 35px !important;" class="my-3 mt-7">
+                        <img style="max-height: 35px !important;" [src]="!activeRoute.includes('/dashboard/manual-requests') ? '../../../../../../assets/iconos/library_add-24px.svg' : '../../../../../../assets/iconos/library_add-24px-b.svg'" height="24px" width="24px" class="mr-3 ml-3">
+                        <div style="max-height: 35px !important;" class="text-xs uppercase">Solicitud Manual</div>
+                    </mat-list-item>
+
+                    <mat-list-item [routerLink]="['manual-assignment']" routerLinkActive="router-link-active" style="color: white; max-height: 35px !important;" class="mt-7">
+                        <img style="max-height: 35px !important;" [src]="!activeRoute.includes('/dashboard/manual-assignment') ? '../../../../../../assets/iconos/manual-assignment.svg' : '../../../../../../assets/iconos/manual-assignment-h.svg'" height="24px" width="24px" class="mr-3 ml-3">
+                        <div style="max-height: 35px !important;" class="text-xs uppercase">Asignación Manual</div>
+                    </mat-list-item>
+
+                    <mat-list-item style="color: white; max-height: 35px !important;" class="my-3 mt-7">
+                        <img style="max-height: 35px !important;" src="../../../../../../assets/iconos/permissions.svg" alt="logo-permissions" class="mr-3 ml-3">
+                        <button [matMenuTriggerFor]="afterMenu">
+                            <div class="text-xs uppercase permissions-button">Permisos</div>
+                        </button>
+                        <mat-menu #afterMenu="matMenu" xPosition="after" class="permissions-button">
+                            <button [routerLink]="['roles']" mat-menu-item routerLinkActive="router-link-active-mat-menu-content" class="roles-and-users-buttons text-xs uppercase">Roles</button>
+                            <button [routerLink]="['users']" mat-menu-item routerLinkActive="router-link-active-mat-menu-content" class="roles-and-users-buttons text-xs uppercase">Usuarios</button>
+                        </mat-menu>
+                    </mat-list-item>
+
+                    <div style="color: white;" class="relative h-32 w-32 my-3 mt-7">
+                        <div class="absolute inset-x-0 bottom-0 h-0">
+                            <div class="flex pb-5 items-center">
+                                <img style="max-height: 35px !important;" src="../../../../../../assets/picture.png" alt="logo-test" class="mr-3 ml-6 user-photo">
+                                <div>
+                                    <div style="max-height: 35px !important;" class="text-xs uppercase">{{ nameLoggedUserinfo }}</div>
+                                    <div style="max-height: 35px !important;" class="text-xs">{{ emailLoggedUserinfo }}</div>
+                                </div>
+                            </div>
+
+                            <mat-divider class="logOut-line"></mat-divider>
+
+                            <div class="flex">
+                                <img src="../../../../../../assets/iconos/logout.svg" alt="logo-logout" class="mr-3 ml-3">
+                                <div>
+                                    <br>
+                                    <div (click)="logOut()" style="max-height: 35px !important;" class="text-xs mr-3 ml-0 logOut-letter flex-1 w-64">Log Out</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </mat-list>
+            </mat-nav-list>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content style="background-color: white !important;">
+        <mat-toolbar class="dashboard-toolbar" role="heading">
+            <div class="flex grid grid-cols-2 w-full">
+                <div>
+                    <button (click)="navigateBack()" mat-mini-fab aria-label="Example icon-button with a heart icon" class="dashboard-toolbar-buttons filter-box-dashboard" style="background-color: #F2F2F2 !important; border-radius: 5px !important; margin-top: 40px; margin-left: 9px;">
+                        <img class="toolbar-icons" src="../../../../../../assets/iconos/arrow.svg" alt="Go back">
+                    </button>
+                </div>
+                <div class="flex justify-end">
+                    <button mat-mini-fab aria-label="Example icon-button with a heart icon" class="dashboard-toolbar-buttons filter-box-dashboard" style="background-color: #F2F2F2 !important; border-radius: 5px !important; margin-top: 42px; margin-left: 9px;">
+                        <img class="toolbar-icons" src="../../../../../../assets/iconos/group.svg" alt="Search">
+                    </button>
+
+                    <button mat-mini-fab aria-label="Example icon-button with a heart icon" class="dashboard-toolbar-buttons filter-box-dashboard" style="background-color: #F2F2F2 !important; border-radius: 5px !important; margin-top: 42px; margin-left: 9px;">
+                        <img class="toolbar-icons" src="../../../../../../assets/iconos/bell.svg" alt="Notifications">
+                    </button>
+
+                    <button mat-mini-fab aria-label="Example icon-button with a heart icon" class="dashboard-toolbar-buttons filter-box-dashboard" style="background-color: #F2F2F2 !important; border-radius: 5px !important; margin-top: 42px; margin-left: 9px;">
+                        <img class="toolbar-icons" src="../../../../../../assets/iconos/settings-blue.svg" alt="Settings">
+                    </button>
+                </div>
+            </div>
+        </mat-toolbar>
+
+        <br><br>
+        <mat-divider></mat-divider>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

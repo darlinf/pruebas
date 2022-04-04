@@ -1,0 +1,51 @@
+<div class="container-box">
+
+    <div class="box box-up"></div>
+
+    <div class="login-content">
+        <div class="login-box">
+            <div>
+                <img class="logo" src="../../assets/wws-image.png" alt="wws-logo">
+            </div>
+
+            <div class="login-box-container">
+                <form class="form">
+                    <div class="pb-2">
+                        <mat-form-field appearance="outline" class="inputs" style="font-size: small !important;">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email">
+                        </mat-form-field>
+                    </div>
+                    <div class="pb-3">
+                        <mat-form-field appearance="outline" class="inputs" style="font-size: small !important;">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                              </button>
+                        </mat-form-field>
+                    </div>
+                    <button class="to-access mt-3" (click)="login()">Acceder</button>
+
+                    <div class="mt-5">
+                        <hr>
+                    </div>
+
+                    <div class="forgot-password text-center mt-3">
+                        <a href="">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="copyright mt-7">
+            <p class="">Copyright 2020 WorldWide Group | Todos los derechos reservados</p>
+        </div>
+
+    </div>
+
+    <div class="box box-down"></div>
+</div>

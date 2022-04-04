@@ -1,0 +1,226 @@
+<div class="pl-6 pr-6 xs:pr-6 sm:pr-6 md:pr-12 lg:pr-12 xl:pr-12">
+
+    <div class="uppercase dashboard-page-title pt-12"> Solicitud </div>
+
+    <div class="info-fixed mt-6" style="background-color: #F2F2F2">
+        <div class="p-3 pb-0">
+            <div class="filter-title">Info. Inicio</div>
+
+            <div class="mt-3 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-9">
+
+                <div>
+                    <p class="header-title">No. Cotización</p>
+                    <p class="content-title">346789</p>
+                </div>
+
+                <div>
+                    <p class="header-title">No. Solicitud</p>
+                    <p class="content-title">412356</p>
+                </div>
+
+                <div>
+                    <p class="header-title">Cliente</p>
+                    <p class="content-title">Rogelio Otero</p>
+                </div>
+
+                <div>
+                    <p class="header-title">Intermediario</p>
+                    <p class="content-title">República Dominicana</p>
+                </div>
+
+                <div>
+                    <p class="header-title">Producto</p>
+                    <p class="content-title">Solicitud Gastos Médicos Mayores</p>
+                </div>
+
+                <div>
+                    <p class="header-title">Plan</p>
+                    <p class="content-title">Solicitud Gastos Médicos Mayores</p>
+                </div>
+
+                <div>
+                    <p class="header-title">Ramo</p>
+                    <p class="content-title">Vida</p>
+                </div>
+
+                <div>
+                    <p class="header-title">Forma de pago</p>
+                    <p class="content-title">DOP</p>
+                </div>
+
+                <div>
+                    <p></p>
+                    <button class="stop-button">
+                        <img src="../../../../../assets/iconos/stop.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-5">
+        <mat-expansion-panel class="expansion-panel-position">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="client-debugging">Depuración de cliente</mat-panel-title>
+
+                <mat-panel-description class="path w-100 custom-icon-size-24">
+                    <button (click)="message()" class="message">
+                        <img src="../../../../../assets/iconos/message.svg" alt="message button">
+                    </button>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <hr class="divider">
+            <mat-divider class="divider"></mat-divider>
+
+            <mat-horizontal-stepper class="test">
+                <p class="contractor-title">Contratante</p>
+
+                <mat-step class="contractor-payer-title flex" label="Contratante/Pagador" state="two-person-request-detail" [stepControl]="contractorPayerFormGroup">
+
+                    <div class="mt-3 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5">
+                        <div class="mr-3">
+                            <app-input [group]="contractorPayerFormGroup" label="Nombre" name="name"></app-input>
+                        </div>
+
+                        <div class="mr-3">
+                            <app-input [group]="contractorPayerFormGroup" label="Parentesco con el asegurado" name="relationshipToTheInsured"></app-input>
+                        </div>
+
+                        <div class="mr-3">
+                            <app-input [group]="contractorPayerFormGroup" label="RNC" name="RNC"></app-input>
+                        </div>
+
+                        <div class="mr-3">
+                            <app-input [group]="contractorPayerFormGroup" label="Registro Mercantil" name="commercialRegister"></app-input>
+                        </div>
+
+                        <div class="mr-3">
+                            <app-input [group]="contractorPayerFormGroup" label="País donde tributa por sus ingresos" name="countryWhereYouPayTaxesOnYourIncome"></app-input>
+                        </div>
+
+                        <div class="mr-3">
+                            <app-input [group]="contractorPayerFormGroup" label="Actividad Ecónomica" name="economicActivity"></app-input>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <br>
+                    <p class="contractor-title">Representante Legal de la empresa</p>
+
+                    <div class="mt-3 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5">
+                        <div class="mr-3">
+                            <app-input [group]="contractorPayerFormGroup" label="Nombre y Apellido" name="name"></app-input>
+                        </div>
+
+                        <div class="mr-3">
+                            <app-input [group]="contractorPayerFormGroup" label="Cargo relación con la sociedad" name="relationshipToTheInsured"></app-input>
+                        </div>
+
+                        <div class="mr-3">
+                            <app-input [group]="contractorPayerFormGroup" label="Tipo de Identificación" name="RNC"></app-input>
+                        </div>
+
+                        <div class="mr-3">
+                            <app-input [group]="contractorPayerFormGroup" label="Identificación" name="commercialRegister"></app-input>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <br>
+                    <p class="contractor-title">Documentos</p>
+
+                    <mat-horizontal-stepper>
+                        <mat-step label="PDF - WorldCompliance" state="green-check">
+
+                            <div class="mr-3 risk-level-box">
+                                <app-select [options]="testOptions" [group]="contractorPayerFormGroup"></app-select>
+                            </div>
+
+                            <div class="dashboard-page-title pt-12"> Adjuntar Archivo </div>
+                            <br>
+                            <div class="attach-file-box">
+                                <div class="attach-file-button">
+                                    <button>
+                                        <img class="b-3" src="../../../../../assets/iconos/upload.svg" alt="upload button">
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-page-title pt-12"> Comentar </div>
+                            <br>
+                            <div>
+                                <textarea class="textarea" name="Texto" id="" cols="30" rows="10" placeholder="Texto"></textarea>
+
+                                <div class="flex justify-end sm:justify-end md:justify-end lg:justify-end xl:justify-end mt-3 sm:mt-3 md:mt-0 lg:mt-0 xl:mt-0">
+                                    <button class="send-button">Enviar</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button mat-button matStepperNext class="next-button">
+                                    <p class="next-letter">Next</p>
+                                </button>
+                            </div>
+                        </mat-step>
+
+                        <mat-step label="Historial Crediticio" state="green-check">
+                            <p>Socialize with each other.</p>
+                            <div>
+                                <button mat-button matStepperPrevious>Back</button>
+                                <button mat-button matStepperNext>Next</button>
+                            </div>
+                        </mat-step>
+
+                        <mat-step label="Matriz de riesgo" state="green-check">
+                            <p>You're welcome.</p>
+                        </mat-step>
+
+                        <mat-step label="Otros Documentos" state="green-check">
+                            <p>Jodir la maxima.</p>
+                        </mat-step>
+
+                        <!-- Icon overrides. -->
+                        <ng-template matStepperIcon="green-check">
+                            <mat-icon svgIcon="green-check"></mat-icon>
+                        </ng-template>
+                    </mat-horizontal-stepper>
+                </mat-step>
+
+                <mat-step label="Titular" state="headline">
+                    <p>Socialize with each other.</p>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </mat-step>
+
+                <mat-step label="Beneficiarios" state="headline">
+                    <p>You're welcome.</p>
+                </mat-step>
+
+                <mat-step label="Cónyuge" state="headline">
+
+                </mat-step>
+
+                <mat-step label="Hijo(s)" state="headline">
+
+                </mat-step>
+
+                <!-- Icon overrides. -->
+                <ng-template matStepperIcon="two-person-request-detail">
+                    <mat-icon svgIcon="two-person-request-detail"></mat-icon>
+                </ng-template>
+                <ng-template matStepperIcon="headline">
+                    <mat-icon svgIcon="headline"></mat-icon>
+                </ng-template>
+            </mat-horizontal-stepper>
+
+        </mat-expansion-panel>
+    </div>
+
+</div>
+
+<script src="../request-detail/request-detail.js"></script>

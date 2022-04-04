@@ -1,0 +1,75 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-skydiving',
+  templateUrl: './skydiving.component.html',
+  styleUrls: ['./skydiving.component.scss']
+})
+export class SkydivingComponent implements OnInit {
+
+  accordionTitles = ['Cuestionario'];
+
+  // skydive:FormGroup;
+
+  @Input() form: FormGroup;
+  @Input() showWarningDot: boolean;
+  @Input() affected: string;
+  step: number;
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit() {
+
+    this.addBasicControls();
+
+    // this.skydive= this.fb.group({
+
+    //   name:['', Validators.required],
+    //   goal:['', Validators.required],
+    //   license:['', Validators.required],
+
+    //   aircraft: this.fb.group({
+
+    //     type:['', Validators.required],
+    //     weight:['', Validators.required],
+    //     total:['', Validators.required],
+    //     average:['', Validators.required],
+    //     flight_hours:['', Validators.required],
+
+    //   }),
+    //   info:['', Validators.required],
+    //   flight:['', Validators.required]
+
+    // });
+
+    console.log(JSON.stringify(this.form.value));
+
+  }
+
+  addBasicControls() {
+
+    // this.form.addControl('name', this.fb.control('', Validators.required));
+    this.form.addControl('goal', this.fb.control('', Validators.required));
+    this.form.addControl('license', this.fb.control('', Validators.required));
+    this.form.addControl('aircraft', this.fb.group({
+
+      type: ['', Validators.required],
+      weight: ['', Validators.required],
+      total: ['', [Validators.required, Validators.min(1)]],
+      average: ['', [Validators.required, Validators.min(1)]],
+      flight_hours: ['', [Validators.required, Validators.min(1)]]
+
+    }));
+    this.form.addControl('info', this.fb.control('', Validators.required));
+    this.form.addControl('flight', this.fb.control('', Validators.required));
+
+  }
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep(panel?: string) {
+    this.step++;
+  }
+}

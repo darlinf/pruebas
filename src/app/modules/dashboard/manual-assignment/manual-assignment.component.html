@@ -1,0 +1,189 @@
+<div class="pl-6 pr-6 xs:pr-6 sm:pr-6 md:pr-12 lg:pr-12 xl:pr-12 bg-white">
+  <div class="uppercase dashboard-page-title pt-12">Asignación Manual</div>
+  <div class="mt-6 w-full">
+    <div>
+      <app-filter-manual-assignment (childEvent)="getManualAssignment($event)"></app-filter-manual-assignment>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+      <div
+        class="dashboard-page-subtitle flex justify-center sm:justify-center md:justify-start lg:justify-start xl:justify-start">
+      </div>
+
+      <div
+        class="flex justify-center sm:justify-center md:justify-end lg:justify-end xl:justify-end mt-3 sm:mt-3 md:mt-0 lg:mt-0 xl:mt-0">
+        <button mat-mini-fab aria-label="Example icon-button with a heart icon"
+          class="dashboard-toolbar-manual-assignment-buttons ml-3" style="
+            background-color: #f2f2f2 !important;
+            border-radius: 5px !important;
+            margin-top: 42px;
+            margin-left: 9px;
+          ">
+          <img class="toolbar-icons arrow-two-person-button" src="../../../../assets/iconos/arrow-two-person-icon.svg"
+            alt="To Download PDF" />
+        </button>
+
+        <button mat-mini-fab aria-label="Example icon-button with a heart icon"
+          class="dashboard-toolbar-manual-assignment-buttons ml-3" style="
+            background-color: #f2f2f2 !important;
+            border-radius: 5px !important;
+            margin-top: 42px;
+            margin-left: 9px;
+          ">
+          <img class="toolbar-icons download-pdf-button" src="../../../../../../assets/iconos/download-pdf.svg"
+            alt="To Download PDF" />
+        </button>
+
+        <button mat-mini-fab aria-label="Example icon-button with a heart icon"
+          class="dashboard-toolbar-manual-assignment-buttons ml-3" style="
+            background-color: #f2f2f2 !important;
+            border-radius: 5px !important;
+            margin-top: 42px;
+            margin-left: 9px;
+          ">
+          <img class="toolbar-icons search-button-table" src="../../../../../../assets/iconos/group.svg" alt="Search" />
+        </button>
+      </div>
+    </div>
+    <div class="mt-6 pb-8 w-full">
+      <div class="table-responsive" style="overflow-y: hidden; overflow-x: auto; max-width: 100%">
+        <table cdk-table matSort [dataSource]="dataSource" class="w-full dashboard-basic-table">
+          <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox (change)="$event ? masterToggle() : null"
+                [checked]="selection.hasValue() && isAllSelected()"
+                [indeterminate]="selection.hasValue() && !isAllSelected()"></mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(element) : null"
+                [checked]="selection.isSelected(element)"></mat-checkbox>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="noQuote" style="margin-right: 15px !important">
+            <th class="padding-cell" mat-header-cell *matHeaderCellDef mat-sort-header>
+              Number
+            </th>
+            <td class="padding-cell" mat-cell *matCellDef="let element"
+              style="color: #007db7 !important; font-weight: 500 !important">
+              {{ element.noCotizacion }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="date" style="margin-right: 15px !important">
+            <th class="padding-cell" mat-header-cell *matHeaderCellDef mat-sort-header style="
+                max-width: 140px !important;
+                min-width: 137px !important;
+                width: 137px !important;
+              ">
+              Created
+            </th>
+            <td class="padding-cell" mat-cell *matCellDef="let element">
+              {{ element.fecha | date: "dd/MM/yyyy, h:mm a" }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="timeElapsed" style="margin-right: 15px !important">
+            <th class="padding-cell" mat-header-cell *matHeaderCellDef mat-sort-header style="
+                max-width: 140px !important;
+                min-width: 137px !important;
+                width: 137px !important;
+              ">
+              Time elapsed
+            </th>
+            <td class="padding-cell" mat-cell *matCellDef="let element">
+              {{ element.timeElapsed }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="intermediary" style="margin-right: 15px !important">
+            <th class="padding-cell" mat-header-cell *matHeaderCellDef mat-sort-header>
+              Intermediary
+            </th>
+            <td class="padding-cell" mat-cell *matCellDef="let element">
+              {{ element.intermediary }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="ramo" style="margin-right: 15px !important">
+            <th class="padding-cell" mat-header-cell *matHeaderCellDef mat-sort-header>
+              Ramo
+            </th>
+            <td class="padding-cell" mat-cell *matCellDef="let element">
+              {{ element.seguro }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="market" style="margin-right: 15px !important">
+            <th class="padding-cell" mat-header-cell *matHeaderCellDef mat-sort-header>
+              Mercado
+            </th>
+            <td class="padding-cell" mat-cell *matCellDef="let element">
+              {{ element.country }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="client" style="margin-right: 15px !important">
+            <th class="padding-cell" mat-header-cell *matHeaderCellDef mat-sort-header>
+              Cliente
+            </th>
+            <td class="padding-cell" mat-cell *matCellDef="let element">
+              {{ element.nombres }} {{ element.apellidos }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status" style="margin-right: 15px !important">
+            <th class="padding-cell" mat-header-cell *matHeaderCellDef mat-sort-header>
+              Status
+            </th>
+            <td class="padding-cell" mat-cell *matCellDef="let element" [ngClass]="{
+                'text-color-green': element.reviewStatus == 'Completado',
+                '': element.reviewStatus != 'Completado'
+              }">
+              {{ element.reviewStatus }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="assignee" style="margin-right: 15px !important">
+            <th class="padding-cell" mat-header-cell *matHeaderCellDef mat-sort-header>
+              Assignee
+            </th>
+            <td class="padding-cell" mat-cell *matCellDef="let element">
+              {{ element.assigned }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions" style="text-align: end !important; margin-right: 15px !important">
+            <th class="padding-cell" mat-header-cell *matHeaderCellDef style="
+                max-width: 140px !important;
+                min-width: 137px !important;
+                width: 137px !important;
+              ">
+              Action
+            </th>
+            <td class="padding-cell" mat-cell *matCellDef="let element" style="
+                max-width: 140px !important;
+                min-width: 137px !important;
+                width: 137px !important;
+              ">
+              <button (click)="assignment(element.id, element.seguro)" mat-mini-fab aria-label="Asignar" title="Asignar"
+                class="dashboard-table-buttons">
+                <img style="width: 0.65rem; margin-top: -0.2rem"
+                  src="../../../../assets/iconos/arrow-two-person-icon.svg" />
+              </button>
+
+              <button style="margin-top: 0.3rem" mat-mini-fab aria-label="Ver Asignación" title="Ver"
+                class="dashboard-table-buttons">
+                <img style="width: 0.65rem; margin-top: -0.5rem" src="../../../../assets/iconos/eye.svg" />
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+      <mat-paginator color="accent" class="dashboard-table-paginator" [pageSizeOptions]="[5, 10, 15]"
+        showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

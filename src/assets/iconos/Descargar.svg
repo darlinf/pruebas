@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="487" height="512" viewBox="0 0 487 512">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Ellipse_105" data-name="Ellipse 105" cx="243.5" cy="243.5" r="243.5" transform="translate(0.244 0.244)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <ellipse id="Ellipse_106" data-name="Ellipse 106" cx="102.5" cy="103" rx="102.5" ry="103" transform="translate(0.482 0)" fill="#e64747" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1431" data-name="Group 1431" transform="translate(-1233.039 -266.021)">
+    <g id="Mask_Group_409" data-name="Mask Group 409" transform="translate(1232.795 290.777)" clip-path="url(#clip-path)">
+      <g id="pdf_1_" data-name="pdf (1)" transform="translate(74.274 56.717)">
+        <path id="Path_1138" data-name="Path 1138" d="M29.451,0A23.9,23.9,0,0,0,5.625,23.826V357.388a23.9,23.9,0,0,0,23.826,23.826H267.709a23.9,23.9,0,0,0,23.826-23.826V95.3L196.232,0Z" transform="translate(42.027)" fill="#e2e5e7"/>
+        <path id="Path_1139" data-name="Path 1139" d="M44.451,95.3h71.478L20.625,0V71.478A23.9,23.9,0,0,0,44.451,95.3Z" transform="translate(217.634)" fill="#b0b7bd"/>
+        <path id="Path_1140" data-name="Path 1140" d="M93.978,78.978,22.5,7.5H93.978Z" transform="translate(239.584 87.803)" fill="#cad1d8"/>
+        <path id="Path_1141" data-name="Path 1141" d="M287.785,145.1a11.948,11.948,0,0,1-11.913,11.913H13.788A11.948,11.948,0,0,1,1.875,145.1V25.975A11.948,11.948,0,0,1,13.788,14.062H275.872a11.948,11.948,0,0,1,11.913,11.913Z" transform="translate(-1.875 164.631)" fill="#18446b"/>
+        <g id="Group_1098" data-name="Group 1098" transform="translate(51.928 219.138)">
+          <path id="Path_1142" data-name="Path 1142" d="M5.962,23.821a6.555,6.555,0,0,1,6.469-6.576h22c12.389,0,23.54,8.291,23.54,24.183,0,15.058-11.15,23.445-23.54,23.445H18.53v12.58c0,4.193-2.668,6.564-6.1,6.564a6.418,6.418,0,0,1-6.469-6.564Zm12.568,5.42V52.972h15.9A11.752,11.752,0,0,0,45.87,41.429c0-6.659-5.051-12.187-11.436-12.187Z" transform="translate(-5.962 -17.245)" fill="#fff"/>
+          <path id="Path_1143" data-name="Path 1143" d="M17.581,83.227c-3.145,0-6.576-1.715-6.576-5.9V23.222c0-3.419,3.431-5.909,6.576-5.909H39.394c43.53,0,42.577,65.914.858,65.914Zm6-54.287V71.612H39.394c25.72,0,26.864-42.672,0-42.672H23.585Z" transform="translate(53.086 -16.455)" fill="#fff"/>
+          <path id="Path_1144" data-name="Path 1144" d="M29.285,29.713V44.855h24.29c3.431,0,6.862,3.431,6.862,6.755,0,3.145-3.431,5.718-6.862,5.718H29.285v20a5.643,5.643,0,0,1-5.706,5.9c-4.193,0-6.755-2.561-6.755-5.9V23.221c0-3.419,2.573-5.909,6.755-5.909h33.44c4.193,0,6.671,2.49,6.671,5.909A6.581,6.581,0,0,1,57.019,29.7H29.285Z" transform="translate(121.211 -16.466)" fill="#fff"/>
+        </g>
+        <path id="Path_1145" data-name="Path 1145" d="M231.971,36.288H5.625V48.2H231.971a11.948,11.948,0,0,0,11.913-11.913V24.375A11.948,11.948,0,0,1,231.971,36.288Z" transform="translate(42.027 285.361)" fill="#cad1d8"/>
+      </g>
+    </g>
+    <g id="Mask_Group_410" data-name="Mask Group 410" transform="translate(1284.557 266.021)" clip-path="url(#clip-path-2)">
+      <g id="downloading-file" transform="translate(37.097 22.586)">
+        <path id="Path_1146" data-name="Path 1146" d="M125.039,18.438a9.851,9.851,0,0,0-9.851,9.85V43.641H21.272V28.288a9.85,9.85,0,1,0-19.7,0v25.2a9.851,9.851,0,0,0,9.85,9.851H125.04a9.851,9.851,0,0,0,9.85-9.851v-25.2A9.85,9.85,0,0,0,125.039,18.438Z" transform="translate(-1.572 82.973)" fill="#18446b"/>
+        <path id="Path_1147" data-name="Path 1147" d="M42.12,112.309a4.208,4.208,0,0,0,5.945,0l34.52-34.52a3.516,3.516,0,0,0-2.487-6H63.889V8.1A7.684,7.684,0,0,0,56.2.417H33.987A7.684,7.684,0,0,0,26.3,8.1V71.786H10.087a3.517,3.517,0,0,0-2.487,6Z" transform="translate(21.565 -0.417)" fill="#18446b"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,728 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '../node_modules/@angular/material/_theming.scss';
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+$md-primarycolor: (50: #e3e9ed, 100: #bac7d3, 200: #8ca2b5, 300: #5d7c97, 400: #3b6081, 500: #18446b, 600: #153e63, 700: #113558, 800: #0e2d4e, 900: #081f3c, A100: #74a9ff, A200: #4189ff, A400: #0e6aff, A700: #005df3, contrast: (50: #000000, 100: #000000, 200: #000000, 300: #ffffff, 400: #ffffff, 500: #ffffff, 600: #ffffff, 700: #ffffff, 800: #ffffff, 900: #ffffff, A100: #000000, A200: #000000, A400: #ffffff, A700: #ffffff, ));
+$md-accentcolor: (50: #e0eff6, 100: #b3d8e9, 200: #80bedb, 300: #4da4cd, 400: #2691c2, 500: #007db7, 600: #0075b0, 700: #006aa7, 800: #00609f, 900: #004d90, A100: #bcdbff, A200: #89c0ff, A400: #56a5ff, A700: #3c97ff, contrast: (50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #ffffff, 500: #ffffff, 600: #ffffff, 700: #ffffff, 800: #ffffff, 900: #ffffff, A100: #000000, A200: #000000, A400: #000000, A700: #000000, ));
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$portalSuscripcion-primary: mat-palette($md-primarycolor);
+$portalSuscripcion-accent: mat-palette($md-accentcolor);
+// The warn palette is optional (defaults to red).
+$portalSuscripcion-warn: mat-palette($mat-red);
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$portalSuscripcion-theme: mat-light-theme(( color: ( primary: $portalSuscripcion-primary, accent: $portalSuscripcion-accent, warn: $portalSuscripcion-warn, )));
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($portalSuscripcion-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Tailwind CSS styles
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+//Desde aquí/From here... (para abajo se encuentran las clases CSS viejas del antiguo proyecto de WWS: Portal de Seguros)
+// (/and below, you can find the old css style classes from the old WWS Project: Insurance Portal.)
+.text-color-green {
+    color: #05842C !important;
+}
+
+.text-color-red {
+    color: #D37575 !important;
+}
+
+.text-color-yellow {
+    color: #D99908 !important;
+}
+
+.text-color-blue-table {
+    color: #0C6A96 !important;
+}
+
+.login-button {
+    border-radius: 30px !important;
+    font-size: 12px;
+    overflow: hidden !important;
+}
+
+.login-base-image {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.login-logo-image {
+    max-width: 30vw;
+}
+
+.filter-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #373536;
+}
+
+.select-persons {
+    border: #d2d2d2 1px solid;
+    max-height: 45px;
+    padding: 0px 15px;
+    border-radius: 5px;
+}
+
+.dashboard-button {
+    border-radius: 30px !important;
+    font-size: 12px;
+    overflow: hidden !important;
+    min-width: 220px !important;
+    width: 100%;
+}
+
+@media (min-width: 1280px) {
+    .dashboard-button {
+        width: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .dashboard-button {
+        width: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .dashboard-button {
+        width: 1rem;
+    }
+}
+
+@media (min-width: 640px) {
+    .dashboard-button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 640px) {
+    .dashboard-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1444px) {
+    .radio-container {
+        padding: 15px 15px 15px 0px !important;
+        padding-top: 0px !important;
+        margin-right: 0px;
+    }
+    .radio-group {
+        mat-radio-button {
+            margin-left: 0px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media (min-width: 1444px) {
+    .radio-container {
+        padding: 15px 15px 15px 0px !important;
+        padding-top: 0px !important;
+        margin-right: 0px;
+    }
+    .radio-group {
+        mat-radio-button {
+            margin-left: 0px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.dashboard-toolbar-buttons {
+    margin-right: 1.35rem !important;
+    box-shadow: none !important;
+    background-color: white !important;
+}
+
+.dashboard-table-buttons {
+    margin-right: 0.45rem !important;
+    box-shadow: none !important;
+    background-color: white !important;
+    border: 1px solid #BDBDBD !important;
+    height: 22px !important;
+    width: 22px !important;
+}
+
+.dashboard-page-title {
+    font-size: 15px !important;
+    color: #18446B;
+    font-weight: bold;
+}
+
+.dashboard-page-subtitle {
+    color: #7e7e7e !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    align-items: center;
+}
+
+.dashboard-background-color-gradient {
+    background: rgb(22, 87, 127);
+    background: -moz-linear-gradient(180deg, rgba(22, 87, 127, 1) 15%, rgba(18, 125, 179, 1) 75%);
+    background: -webkit-linear-gradient(180deg, rgba(22, 87, 127, 1) 15%, rgba(18, 125, 179, 1) 75%);
+    background: linear-gradient(180deg, rgba(22, 87, 127, 1) 15%, rgba(18, 125, 179, 1) 75%);
+    -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr="#16577f", endColorstr="#127db3", GradientType=1)';
+}
+
+.dashboard-background-color-first {
+    background-color: #18446B;
+}
+
+.dashboard-toolbar {
+    background-color: white;
+}
+
+@media (min-width: 640px) {
+    table {
+        display: inline-table !important;
+    }
+    thead tr:not(:first-child) {
+        display: none;
+    }
+}
+
+.dashboard-basic-table {
+    tr {
+        height: 40px !important;
+    }
+    .padding-cell {
+        padding: 0px 5px !important;
+    }
+    border-bottom-color: #24ACE7 !important;
+    .mat-sort-header-container {
+        color: #18446B !important;
+    }
+    // .mat-row:nth-child(odd) {
+    //     background-color: #FBFBFA !important;
+    // }
+    .mat-cell,
+    .mat-footer-cell {
+        color: #373536;
+        font-size: 13px !important;
+    }
+    .mat-header-cell {
+        color: #18446B !important;
+        font-weight: bold !important;
+        font-size: 13px !important;
+    }
+    td.mat-footer-cell {
+        border-bottom: 2px #24ACE7 solid !important;
+    }
+    td.mat-cell,
+    th.mat-header-cell {
+        border-color: #24ACE7 !important;
+        border-bottom: 1px solid;
+    }
+    td.mat-cell:last-of-type,
+    td.mat-footer-cell:last-of-type,
+    th.mat-header-cell:last-of-type {
+        padding-right: 45px;
+        text-align: start !important;
+    }
+}
+
+.dashboard-table-paginator {
+    .mat-button .mat-button-wrapper>*,
+    .mat-fab .mat-button-wrapper>*,
+    .mat-flat-button .mat-button-wrapper>*,
+    .mat-icon-button .mat-button-wrapper>*,
+    .mat-mini-fab .mat-button-wrapper>*,
+    .mat-raised-button .mat-button-wrapper>*,
+    .mat-stroked-button .mat-button-wrapper>* {
+        color: #007DB7;
+        vertical-align: middle;
+        border-radius: 4px;
+        border: #007DB7 1.3px solid;
+    }
+    .mat-paginator-range-label {
+        color: #007DB7;
+    }
+    .mat-paginator-page-size-label {
+        color: #007DB7;
+    }
+    .mat-paginator-container {
+        justify-content: space-between !important;
+    }
+}
+
+.title-1 {
+    font-weight: Bold;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 18px;
+    color: #007DB7;
+}
+
+.title-2 {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 18px;
+    color: #575657;
+}
+
+.title-3 {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 16px;
+    color: #575657;
+}
+
+.formulary-labels {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 13px;
+    font-weight: Bold;
+    color: #373536;
+}
+
+.body-13 {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 13px;
+    text-align: justify;
+    color: #373536;
+}
+
+.title-13-blue {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 13px;
+    color: #24ACE7;
+}
+
+.radio-button-label {
+    font-size: 13px;
+    color: #373536;
+    font-weight: 300;
+}
+
+.radio-button {
+    font-size: 12px;
+    color: #575657;
+}
+
+.extern-description {
+    font-size: 13px;
+    color: #837c83;
+}
+
+.radio-group {
+    .mat-radio-checked {
+        color: #007DB7 !important;
+    }
+}
+
+.declaraciones {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 12px;
+    text-align: justify;
+    background: #F2F2F2;
+}
+
+.bg-opacity-05 {
+    opacity: 0.5 !important;
+}
+
+.next-button {
+    background: #007DB7 !important;
+    color: white !important;
+    border-radius: 35px !important;
+    font-size: 12px !important;
+    padding: 3px 37px !important;
+}
+
+.cancel-button {
+    background: #373536 !important;
+    color: white !important;
+    border-radius: 35px !important;
+    font-size: 12px !important;
+    padding: 3px 37px !important;
+}
+
+.send-button {
+    background: #007DB7 !important;
+    color: white !important;
+    border: 2px solid #007DB7 !important;
+    border-radius: 35px !important;
+    font-size: 12px !important;
+    padding: 3px 39.5px !important;
+    min-width: 120px !important;
+    font-weight: 900 !important;
+}
+
+.save-button {
+    background: white !important;
+    color: #373536 !important;
+    border: 2px solid #BDBDBD !important;
+    border-radius: 35px !important;
+    font-size: 12px !important;
+    padding: 3px 39.5px !important;
+    min-width: 120px !important;
+    font-weight: 900 !important;
+}
+
+.cancel-form-button {
+    background: #C4C4C466 !important;
+    color: #373536 !important;
+    border: 2px solid #BDBDBD !important;
+    border-radius: 35px !important;
+    font-size: 12px !important;
+    padding: 3px 39.5px !important;
+    min-width: 120px !important;
+    font-weight: 900 !important;
+}
+
+.ww-divider {
+    color: #E5E5E5;
+    border: #E5E5E5 1px solid;
+}
+
+.small-search-button {
+    width: 32px !important;
+    height: 32px !important;
+    background-color: #007DB7 !important;
+    border-radius: 50% !important;
+    outline: none !important;
+    outline-style: none !important;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex;
+    justify-content: center;
+}
+
+.nofocus:focus {
+    outline: none !important;
+    outline-style: none !important;
+}
+
+.big-search-button {
+    background: #007DB7 !important;
+    color: white !important;
+    border: 2px solid #007DB7 !important;
+    border-radius: 35px !important;
+    font-size: 12px !important;
+    padding: 3px 39.5px !important;
+    font-weight: 900 !important;
+    width: 100% !important;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+    max-width: 330px;
+}
+
+.example-headers-align .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+.new-request-menu-image {
+    width: 600px;
+    height: 600px;
+}
+
+.affected-form-name {
+    font-size: 22px;
+    color: #16577f;
+    font-weight: bold;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+    @responsive {
+        .tx4-xl {
+            font-size: 485px !important;
+            line-height: 525px !important;
+        }
+        .tx4-lg {
+            font-size: 315px !important;
+            line-height: 395px !important;
+        }
+        .tx4-md {
+            font-size: 285px !important;
+            line-height: 325px !important;
+        }
+        .tx4-sm {
+            font-size: 245px !important;
+            line-height: 325px !important;
+        }
+        .t-xl {
+            font-size: 80px !important;
+        }
+        .t-lg {
+            font-size: 60px !important;
+        }
+        .t-md {
+            font-size: 40px !important;
+        }
+        .t-sm {
+            font-size: 40px !important;
+        }
+        .i-xl {
+            font-size: 30px !important;
+        }
+        .i-lg {
+            font-size: 19px !important;
+        }
+        .i-md {
+            font-size: 17px !important;
+        }
+        .i-sm {
+            font-size: 14px !important;
+        }
+        .c-404-xl {
+            height: 95px !important;
+            width: 95px !important;
+            top: 54.5% !important;
+        }
+        .c-404-lg {
+            height: 65px !important;
+            width: 65px !important;
+            top: 52.5% !important;
+        }
+        .c-404-md {
+            height: 55px !important;
+            width: 55px !important;
+            top: 54.5% !important;
+        }
+        .c-404-sm {
+            height: 45px !important;
+            width: 45px !important;
+            top: 54.5% !important;
+        }
+    }
+}
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+
+/** OVERWRITING ANOTHER CLASSES */
+
+.mat-raised-button {
+    box-shadow: none !important;
+}
+
+.file-input {
+    .mat-form-field-suffix {
+        top: .25em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        display: grid;
+    }
+}
+
+.file-error {
+    .mat-form-field-outline {
+        color: rgb(255, 0, 0);
+    }
+}
+
+.mat-list-item-content {
+    max-height: 35px !important;
+}
+
+.mat-drawer-inner-container {
+    overflow: hidden !important;
+}
+
+mat-form-field.mat-form-field.mat-form-field-appearance-outline>div.mat-form-field-wrapper>div.mat-form-field-flex>div.mat-form-field-infix {
+    padding: 0.7em 0px
+}
+
+mat-form-field.mat-form-field.mat-form-field-appearance-outline>div.mat-form-field-wrapper>div.mat-form-field-flex>div.mat-form-field-infix>span.mat-form-field-label-wrapper {
+    top: -1em;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.5em) scale(.75);
+    width: 133.33333%;
+}
+
+button:focus,
+button:active:focus,
+button.active:focus {
+    outline: none !important;
+    outline-style: none !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    display: flex;
+    position: absolute;
+    top: .25em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.dependents-select {
+    .mat-menu-content {
+        min-width: 200px !important;
+    }
+    .mat-checkbox {
+        max-height: 25px !important;
+    }
+}
+
+.ww-mat-accordion {
+    .ww-mat-expansion {
+        border-radius: 4px !important;
+        margin-top: 14px !important;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+    }
+    .mat-expansion-panel:not([class*=mat-elevation-z]) {
+        box-shadow: 0px -2px 0px -3px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+    }
+    .icon-blue {
+        border-color: #18446B !important;
+    }
+    .mat-expansion-indicator::after {
+        border-style: solid;
+        border-width: 0 3px 3px 0;
+        content: '';
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        vertical-align: middle;
+        border-color: #007DB7 !important;
+    }
+    .action-row {
+        border: 0px !important;
+        padding-top: 0px !important;
+        padding-right: 24px !important;
+        .mat-form-field-wrapper {
+            padding-bottom: 0px !important;
+        }
+    }
+}
+
+.warning-accordion-dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 8px;
+    background-color: #FF0000;
+}
+
+.info-cot {
+    background-color: #F2F2F2;
+    .w-h {
+        width: 150px;
+    }
+}
+
+.mat-tab-body-content {
+    padding-bottom: 10px !important;
+}
+
+::ng-deep .mat-tab-labels {
+    margin-top: 20px;
+    background-color: #F2F2F2;
+}
+
+.mat-tab-labels {
+    margin-top: 20px;
+    background-color: #F2F2F2;
+}
+
+.mat-tab-label-active {
+    color: #18446B !important;
+    font-weight: bold;
+    font-size: 13px;
+    opacity: 100 !important;
+}
+
+.mat-ink-bar {
+    background-color: #007DB7 !important;
+}
+
+.mat-tab-label {
+    color: #007DB7;
+    font-weight: bold;
+    font-size: 13px;
+    opacity: 100 !important;
+}
+
+$zero: 1;
+@for $i from 0 through 300 {
+    .warn-tab #mat-tab-label-#{$i}-#{$zero} {
+        color: red !important;
+    }
+}
+
+.warn-tab-life #mat-tab-label-0-2 {
+    color: red !important;
+}
+
+//...hasta aquí/to here, van las clases CSS del antiguo proyecto de WWS/go the old CSS style classes from the old WWS project
