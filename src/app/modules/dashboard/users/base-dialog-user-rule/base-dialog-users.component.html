@@ -1,0 +1,166 @@
+<div style="max-width: 400px !important">
+  <form class="text-center h-full">
+    <h2
+      mat-dialog-title
+      class="title"
+      style="margin-bottom: 10px !important; float: left; color: #18446b"
+    >
+      <strong>ASIGNAR NUEVO USUARIO</strong>
+    </h2>
+
+    <div class="row">
+      <div class="col">
+        <!--select roles-->
+        <mat-form-field
+          class="dropDrown-rigth"
+          appearance="outline"
+          style="font-size: small !important"
+        >
+          <mat-label>Usuarios</mat-label>
+          <mat-select [formControl]="userId" required>
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let type of users" [value]="type.value">
+              {{ type.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!--select roles-->
+
+        <!--select ramo-->
+        <mat-form-field
+          class="dropDrown-left"
+          appearance="outline"
+          style="font-size: small !important"
+        >
+          <mat-label>{{ data.bouquetTitle }}</mat-label>
+          <mat-select [formControl]="ramo" required>
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let type of ramos" [value]="type.value">
+              {{ type.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!--select ramo-->
+      </div>
+
+      <div
+        style="
+          display: flex !important;
+          justify-content: space-between !important;
+          width: 407px !important;
+        "
+      >
+        <!--select mercado-->
+        <mat-form-field
+          appearance="outline"
+          style="font-size: small !important"
+        >
+          <mat-label>{{ data.marketTitle }}</mat-label>
+          <mat-select [formControl]="countryCode" required>
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let type of mercados" [value]="type.value">
+              {{ type.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!--select mercado-->
+
+        <div
+          style="
+            width: 200px !important;
+            display: flex !important;
+            justify-content: space-between !important;
+          "
+        >
+          <!--input monto min-->
+          <mat-form-field
+            color="accent"
+            appearance="outline"
+            style="font-size: small !important; width: 98px !important"
+          >
+            <mat-label>Monto Min</mat-label>
+            <input
+              autocomplete="off"
+              required
+              [formControl]="minAmount"
+              min="0"
+              oninput="this.value = Math.abs(this.value)"
+              matInput
+              class="dropDrown-rigth"
+              [type]="inputypeMontoMin"
+              placeholder="$ 0.00"
+              [value]="currencyFormatValueMontoMin"
+              (blur)="setCurrencyFormat($event, 'Monto min')"
+              (focus)="unsetCurrencyFormat($event, 'Monto min')"
+            />
+          </mat-form-field>
+          <!--input monto min-->
+
+          <!--input monto max-->
+          <mat-form-field
+            color="accent"
+            appearance="outline"
+            style="font-size: small !important; width: 98px !important"
+          >
+            <mat-label>Monto Max</mat-label>
+            <input
+              autocomplete="off"
+              required
+              [formControl]="maxAmount"
+              matInput
+              oninput="this.value = Math.abs(this.value)"
+              min="0"
+              class="dropDrown-left"
+              [type]="inputypeMontoMax"
+              placeholder="$ 0.00"
+              [value]="currencyFormatValueMontoMax"
+              (blur)="setCurrencyFormat($event, 'Monto max')"
+              (focus)="unsetCurrencyFormat($event, 'Monto max')"
+            />
+          </mat-form-field>
+          <!--input monto max-->
+        </div>
+      </div>
+    </div>
+
+    <div mat-dialog-actions *ngIf="data.showButtons">
+      <hr class="w-full mb-3 ww-divider" />
+      <div
+        class="grid w-full"
+        [ngClass]="
+          data.showCancelButton == true ? 'grid-cols-2' : 'grid-cols-1'
+        "
+      >
+        <div class="w-full px-1">
+          <button
+            mat-stroked-button
+            class="cancel-button w-full"
+            (click)="onNoClick()"
+            *ngIf="data.showCancelButton"
+            mat-dialog-close="cancel"
+            [innerHtml]="data.textCancelButton"
+          ></button>
+        </div>
+        <div class="w-full px-1">
+          <button
+            *ngIf="data.showDropDown !== true"
+            mat-stroked-button
+            class="next-button w-full"
+            [innerHtml]="data.textPrincipalButton"
+            cdkFocusInitial
+            (click)="onSubmit()"
+          ></button>
+          <!-- [mat-dialog-close]="data.showInput === true ? data.email : 'true'"-->
+          <button
+            *ngIf="data.showDropDown === true && !dropDownDisable"
+            mat-stroked-button
+            class="next-button w-full"
+            [mat-dialog-close]="dropDownValue"
+            [innerHtml]="data.textPrincipalButton"
+            cdkFocusInitial
+          ></button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
